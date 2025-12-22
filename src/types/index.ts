@@ -10,13 +10,15 @@ export interface Recipe{
 
 }
 
-interface Ingredient {
-    quanity: string
+export interface Ingredient {
+    quantity: string
     item: string
 }
 
 export interface RecipeBookContextType {
-    recipes: Recipe[] 
+    recipeBook: Recipe[] 
+    loading : boolean
+    error : string | null
 }
 
 export interface RecipeBookProviderProps {
