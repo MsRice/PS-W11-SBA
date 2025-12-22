@@ -1,6 +1,16 @@
 export interface Recipe{
-    id:number
+    id:string
     name: string
-    ingredents: string[]
-    
+    ingredients?: Ingredient[]
+    instructions?: string[]
+    categories?: string[]
+    youtubeUrl?: string
+    sourceUrl?: string
+    thumbnailUrl?: string
+
+}
+
+interface Ingredient {
+    quanity: string
+    item: string
 }

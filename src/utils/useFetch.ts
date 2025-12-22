@@ -18,9 +18,9 @@ export function useFetch(url: string){
                 throw new Error("Dis Broke")
             }
             
-            console.log(response )
+            // console.log(response )
             const result = await response.json()
-            console.log(result )
+            // console.log(result )
 
             if (isMounted){
             setData(result)
