@@ -1,10 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Nav from '../components/Nav';
 
 const HomeLayout = () => {
     return (
         <div>
-            <div>Nav</div>
+            <Nav />
             <Outlet />
             <div>Footer</div>
         </div>
