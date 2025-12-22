@@ -3,7 +3,7 @@ export interface Recipe{
     name: string
     ingredients?: Ingredient[]
     instructions?: string[]
-    categories?: string[]
+    category?: string
     youtubeUrl?: string
     sourceUrl?: string
     thumbnailUrl?: string
@@ -13,4 +13,12 @@ export interface Recipe{
 interface Ingredient {
     quanity: string
     item: string
+}
+
+export interface RecipeBookContextType {
+    recipes: Recipe[] 
+}
+
+export interface RecipeBookProviderProps {
+  children: React.ReactNode
 }
