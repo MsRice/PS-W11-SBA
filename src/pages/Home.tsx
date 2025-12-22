@@ -8,7 +8,7 @@ const Home = () => {
     } 
 
     return (
-        <div>
+        <div className="book-wall--wrapper">
             Home is where the heart is
         </div>
     );

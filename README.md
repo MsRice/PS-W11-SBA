@@ -2,7 +2,7 @@
 
 - [Overview](#overview)
   - [Scenario](#scenario)
--[Built with](#built-with)
+- [Built with](#built-with)
   - [React + Typescript + Vite](#react-typescript-vite)
   - [React Compiler](#react-compiler)
   - [Expanding the ESLint configuration](#expanding-the-eSLint-configuration)
