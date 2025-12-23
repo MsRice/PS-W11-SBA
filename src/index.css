@@ -183,8 +183,31 @@ a{
 /* Outlet - Home */
 .book-wall--wrapper{
   height: calc(100vh - var(--nav-height));
+  display: flex;
+  justify-content: center;
 }
-
+.book-wall--row{
+  border: 2px solid #0F3D2E;
+  width: 82%;
+}
+.filter-bar--wrapper{
+  border: 2px solid #0F3D2E;
+  height: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 0 20px 0 0;
+}
+.display-recipe--wrapper{
+  height: 54%;
+  display: flex;
+  border: 2px solid #0F3D2E;
+}
+.thubnail-recipe--wrapper{
+  height: 42%;
+  display: flex;
+  border: 2px solid #0F3D2E;
+}
 /* Footer */
 
 .footer{
@@ -246,3 +269,4 @@ a{
     font-weight: 500;
     font-size: .9rem;
 }
+
