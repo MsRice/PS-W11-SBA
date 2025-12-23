@@ -22,6 +22,8 @@ export interface RecipeBookContextType {
     recipeBook: Recipe[] 
     loading : boolean
     error : string | null
+    category : string
+    setCategory : (category: string) => void
 }
 
 export interface RecipeBookProviderProps {
