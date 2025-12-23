@@ -14,7 +14,10 @@ export interface Ingredient {
     quantity: string
     item: string
 }
-
+export interface Meal {
+  [key: `strIngredient${number}`]: string | null;
+  [key: `strMeasure${number}`]: string | null;
+}
 export interface RecipeBookContextType {
     recipeBook: Recipe[] 
     loading : boolean
@@ -37,3 +40,20 @@ export type ModalContextType = {
 export interface ModalProviderProps {
     children: React.ReactNode
   }
+
+
+export interface User {
+    id: number,
+    username: string,
+    password: string,
+}
+
+export interface AuthContextType {
+    user : User | undefined,
+    login: (userData: User) => void,
+    logout: () => void
+}
+
+export interface AuthenticationProviderProps {
+  children: React.ReactNode
+}

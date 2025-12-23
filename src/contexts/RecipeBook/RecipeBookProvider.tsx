@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import type { Recipe, RecipeBookProviderProps , Ingredient} from '../../types';
+import type { Recipe, RecipeBookProviderProps , Ingredient, Meal} from '../../types';
 import { RecipeBookContext } from './RecipeBookContext';
 
 export default function RecipeBookProvider({children}:RecipeBookProviderProps) {
@@ -13,7 +13,7 @@ export default function RecipeBookProvider({children}:RecipeBookProviderProps) {
             setLoading(true)
 
             const requests = Array.from({length: 10}, () =>
-                fetch('https://www.themealdb.com/api/json/v1/1/random.php' ).then(el => el.json)
+                fetch('https://www.themealdb.com/api/json/v1/1/random.php' ).then(el => el.json())
             )
             const responses = await Promise.all(requests)
             const mapped:Recipe[] = responses.map(res => {
@@ -43,7 +43,7 @@ export default function RecipeBookProvider({children}:RecipeBookProviderProps) {
         }
     }
 
-    function extractIngredients(meal: any): Ingredient[] {
+    function extractIngredients(meal: Meal): Ingredient[] {
         const ingredients: Ingredient[] = [];
         
         for (let i = 1; i <= 20; i++) {
