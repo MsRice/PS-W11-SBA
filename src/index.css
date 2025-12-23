@@ -182,6 +182,7 @@ li{
   display: flex;
   height: 100%;
 }
+
 /* Outlet - Home */
 .book-wall--wrapper{
   height: calc(100vh - var(--nav-height));
@@ -189,27 +190,98 @@ li{
   justify-content: center;
 }
 .book-wall--row{
-  border: 2px solid #0F3D2E;
   width: 82%;
 }
 .filter-bar--wrapper{
-  border: 2px solid #0F3D2E;
   height: 4%;
   display: flex;
   align-items: center;
   justify-content: end;
   padding: 0 20px 0 0;
 }
+
+/* Featre Recipe */
 .feature-recipe--wrapper{
   height: 54%;
   display: flex;
-  border: 2px solid #0F3D2E;
+  align-items: center;
+  justify-content: center;
 }
-.thubnail-recipe--wrapper{
+
+.feature-card--wrapper{
+  border: 4px solid #1F6B45;
+  display: flex;
+  width: 80%;
+  height: 80%;
+  
+  align-items: center;
+  border-radius: 10px;
+  justify-content: space-evenly;
+  background-color: #6ed1a08c;
+  position: relative;
+}
+.feature-image--wrapper{
+  border-radius: 10px;
+  display: flex;
+  height: 90%;
+}
+.feature-image--img{
+  border-radius: 10px;
+}
+
+.feature-explore--wrapper{
+  position: absolute;
+  border: 2px solid #1F6B45;
+  padding: 4px;
+  border-radius: 4px;
+  bottom: 5%;
+  right: 5%;
+}
+
+/* Thubnail - Recipes */
+.thubnail-recipes--wrapper{
   height: 42%;
   display: flex;
-  border: 2px solid #0F3D2E;
+  align-items: center;
+  justify-content: space-around;
+  overflow-x:  scroll; 
+  padding: 8px;
+  border: 2px solid #8FBFA3;
 }
+.thubnail-recipe--wrapper{
+  flex: 0 0 auto;
+  display: flex;
+  height: 50%;
+  width: 15%;
+  margin: 8px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  border: 2px solid #8FBFA3;
+  border-radius: 10px;
+
+  background-size: cover;
+  position: relative; 
+  cursor: pointer;
+}
+
+.thubnail-recipe--wrapper::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.822);
+  border-radius: 10px 
+}
+
+.thubnail-recipe--wrapper p {
+  position: relative;
+    color: #2C2C2C; 
+    text-align: center;
+    padding-top: 8px;
+    font-weight: 600;
+}
+
 /* Footer */
 
 .footer{

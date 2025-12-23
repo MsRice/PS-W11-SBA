@@ -58,20 +58,29 @@ const Home = () => {
                 </div>
 
                 <div className="feature-recipe--wrapper">
-                    {featureRecipe && featureRecipe.name }
+                    {featureRecipe &&  
+                    <div className="feature-card--wrapper">
+                            <figure className="feature-image--wrapper">
+                                <img className="feature-image--img" src={featureRecipe.thumbnailUrl} alt={`${featureRecipe.name} image`} />
+                            </figure>
+                            <h1>{featureRecipe.name}</h1>
+                            <div className="feature-explore--wrapper">
+                                <button>explore</button>
+                            </div>
+                    </div>}
                 </div>
-                <div className="thubnail-recipe--wrapper">
+                <div className="thubnail-recipes--wrapper">
 
-                    {recipeBook.filter(recipe => recipe.id !== intID)
-                    .map(recipe => (
-                        <li key={recipe.id} >
-                            <button onClick={() => setIntID(recipe.id)}>
-                               {recipe.name} 
-                            </button>
-                        </li>
-                    ))}
+                        {recipeBook.filter(recipe => recipe.id !== intID)
+                        .map(recipe => (
+                            <div className="thubnail-recipe--wrapper" style={{backgroundImage: `url(${recipe.thumbnailUrl})`} }key={recipe.id} onClick={() => setIntID(recipe.id)} >
+                                <p>
+                                    {recipe.name} 
+                                </p>
+                                    
+                            </div>
+                        ))}
                 </div>
-           
             </div>
         </div>
     );
