@@ -24,3 +24,16 @@ export interface RecipeBookContextType {
 export interface RecipeBookProviderProps {
   children: React.ReactNode
 }
+
+export type SourceType = 'login' | 'logout' | 'favorites' ;
+
+export type ModalContextType = {
+  isOpen: boolean;
+  source: SourceType | null;
+  openModal: (source : SourceType) => void;
+  closeModal: () => void;
+}
+
+export interface ModalProviderProps {
+    children: React.ReactNode
+  }

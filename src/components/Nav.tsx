@@ -1,8 +1,17 @@
 import React from 'react';
 import ricebook from '../assets/RiceBookLogos/ricebook.png'
 import { BiSolidUserDetail } from 'react-icons/bi';
+import { useModal } from '../contexts/modal/ModalContext';
+import type { SourceType } from '../types';
 
 const Nav = () => {
+    const {openModal ,isOpen} = useModal()
+
+    function handleModalOpen(source:SourceType){
+        console.log(source , isOpen)
+        openModal(source)
+    }
+
     return (
         <div className="nav--wrapper">
             <figure className='nav__logo--wrapper'>
@@ -10,8 +19,8 @@ const Nav = () => {
             </figure>
             <ul className="nav--links">
                 <li className="nav--link">Home</li>
-                <li className="nav--link">Favorites</li>
-                <li className="nav--link account"><BiSolidUserDetail /></li>
+                <li className="nav--link" onClick={() => handleModalOpen('favorites')}>Favorites</li>
+                <li className="nav--link account" onClick={() => handleModalOpen('login')}><BiSolidUserDetail /></li>
             </ul>
         </div>
     );

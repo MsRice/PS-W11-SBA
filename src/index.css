@@ -20,8 +20,52 @@ a{
 .container{
   width: 100vw;
   display: flex;
-  flex-direction: column;
+  /* background-color: #2C2C2C; */
+}
+
+/* Modal Support */
+
+.row-modal-true{
+  width: 84vw;
+}
+.row-modal-false{
+  width: 100vw;
+}
+
+
+.sidebar-true{
+    width: 16vw;
+    position: fixed;
+    right: 0;
+    
+}
   
+
+.sidebar-false{
+    width: 0vw;
+}
+
+/*  Side Bars */
+
+.sidebar--wrapper{
+    border-top: 4px solid #0F3D2E;
+    border-left: 4px solid #0F3D2E;
+    border-bottom: 4px solid #0F3D2E;
+    background-color: #1F6B45;
+    height: 100vh;
+    position: relative;
+}
+.exit-btn{
+    color: #0F3D2E;
+    position: absolute;
+    font-size: 2rem;
+    right: 26px;
+    top: 10px;
+    transition: all .3s ease;
+}
+.exit-btn:hover{
+    color: #E38B37;
+    text-shadow: 0 0 0 3px rgba(127, 255, 0, 0.3);
 }
 
 /* Nav Bar */

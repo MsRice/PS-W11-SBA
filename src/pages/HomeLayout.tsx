@@ -2,13 +2,23 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import { useModal } from '../contexts/modal/ModalContext';
+import SideBar from '../components/SideBar';
 
 const HomeLayout = () => {
+     const {isOpen} = useModal()
+     console.log(isOpen)
     return (
         <div className='container'>
-            <Nav />
-            <Outlet />
-            <Footer />
+            <div className={`row row-modal-${isOpen}`}>
+                <div className='main'>
+
+                <Nav />
+                <Outlet />
+                </div>
+                <Footer />
+            </div>
+            { isOpen && <SideBar />}
         </div>
     );
 }
