@@ -1,7 +1,12 @@
+import { useCategories } from "../contexts/Categories/CategoriesContext";
 import { useRecipeBook } from "../contexts/RecipeBook/RecipeBookContext";
 
 const Home = () => {
     const {recipeBook , loading} = useRecipeBook()
+    const {categories , catLoading} = useCategories()
+
+    console.log(catLoading)
+    console.log(categories)
 
     if(loading){
         return <div> loading</div>
@@ -12,7 +17,12 @@ const Home = () => {
             <div className="book-wall--row">
                 <div className="filter-bar--wrapper">
                     <select name="" id="">
-                        <option value="">temp</option>
+                        {catLoading && <option value="" selected>Loading...</option>}
+                        {categories.map(category => (
+                            <option value="">{category.name}</option>
+
+                        ))}
+                        
                     </select>
                 </div>
 

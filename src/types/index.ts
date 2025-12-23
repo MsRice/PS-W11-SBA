@@ -57,3 +57,20 @@ export interface AuthContextType {
 export interface AuthenticationProviderProps {
   children: React.ReactNode
 }
+
+export interface Category {
+  id: string
+  name: string
+  thumbUrl: string
+  description: string
+}
+
+export interface CategoriesContextType {
+    categories: Category[] 
+    catLoading : boolean
+    catError : string | null
+}
+
+export interface CategoriesProviderProps {
+  children: React.ReactNode
+}

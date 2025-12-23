@@ -7,7 +7,6 @@ import SideBar from '../components/SideBar';
 
 const HomeLayout = () => {
      const {isOpen} = useModal()
-     console.log(isOpen)
     return (
         <div className='container'>
             <div className={`row row-modal-${isOpen}`}>
