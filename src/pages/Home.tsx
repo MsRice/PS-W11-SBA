@@ -1,38 +1,65 @@
+import { useEffect, useMemo, useState} from "react";
 import { useCategories } from "../contexts/Categories/CategoriesContext";
 import { useRecipeBook } from "../contexts/RecipeBook/RecipeBookContext";
+import type { Recipe } from "../types";
 
 const Home = () => {
     const {recipeBook , loading} = useRecipeBook()
     const {categories , catLoading} = useCategories()
+    
+    
+    const randomIndex = useMemo(() => {
+        if (!recipeBook.length) return 0
+        return Math.floor(Math.random() * recipeBook.length)
+    }, [recipeBook])
 
-    console.log(catLoading)
-    console.log(categories)
+    const randomRecipe = recipeBook[randomIndex] ?? null
+    const [intID , setIntID] = useState<string | null>(null)
+    
+    const featureRecipe: Recipe | null = useMemo(() =>{
+        if(!recipeBook.length) return null
+        return(
+            recipeBook.find(r => r.id === intID) ?? randomRecipe
+        )
+    },[recipeBook , intID , randomRecipe])
+
 
     if(loading){
         return <div> loading</div>
     } 
+    
+    
+
 
     return (
         <div className="book-wall--wrapper">
             <div className="book-wall--row">
+
+
                 <div className="filter-bar--wrapper">
-                    <select name="" id="">
+                    <select>
                         {catLoading && <option value="" selected>Loading...</option>}
+                        {!catLoading && <option value="">All Categories</option>}
                         {categories.map(category => (
-                            <option value="">{category.name}</option>
+                            <option key={category.id} value={category.name}>{category.name}</option>
 
                         ))}
                         
                     </select>
                 </div>
 
-                <div className="display-recipe--wrapper">
-                    {recipeBook[0].name }
+                <div className="feature-recipe--wrapper">
+                    {featureRecipe && featureRecipe.name }
                 </div>
                 <div className="thubnail-recipe--wrapper">
 
-                    {recipeBook.slice(1).map(recipe => (
-                        <li key={recipe.id} >{recipe.name}</li>
+                    {recipeBook.filter(recipe => recipe.id !== intID)
+                    .map(recipe => (
+                        <li key={recipe.id} >
+                            <button onClick={() => setIntID(recipe.id)}>
+                               {recipe.name} 
+                            </button>
+                        </li>
                     ))}
                 </div>
            

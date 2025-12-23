@@ -16,7 +16,9 @@ ul{
 a{
   text-decoration: none;
 }
-
+li{
+  list-style: none;
+}
 .container{
   width: 100vw;
   display: flex;
@@ -198,7 +200,7 @@ a{
   justify-content: end;
   padding: 0 20px 0 0;
 }
-.display-recipe--wrapper{
+.feature-recipe--wrapper{
   height: 54%;
   display: flex;
   border: 2px solid #0F3D2E;
