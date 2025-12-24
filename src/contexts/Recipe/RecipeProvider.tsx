@@ -22,7 +22,7 @@ const RecipeProvider = ({children}:RecipeProviderProps) => {
             
                 const data = await response.json();
                 
-                console.log(data)
+                // console.log(data)
                 const meal: Meal | undefined = data.meals?.[0];
 
                 if (!meal) {
@@ -44,7 +44,7 @@ const RecipeProvider = ({children}:RecipeProviderProps) => {
                         thumbnailUrl: meal.strMealThumb || undefined
                 }
                 
-                console.log(mapped)
+                // console.log(mapped)
             
                 setRecipe(mapped)
                 setError(null)

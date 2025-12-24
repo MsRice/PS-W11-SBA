@@ -1,12 +1,19 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useRecipe } from '../contexts/Recipe/RecipeContext';
+import { useAuthentication } from '../contexts/auth/AuthenticationContect';
+import { useFavorites } from '../contexts/Favorites/FavoriesContext';
 
 const Recipe = () => {
     const {recipeId} = useParams<{ recipeId: string }>()
     const {recipe, loading, error, setRecipeId } = useRecipe()
+    const { user } = useAuthentication()
+    const { addToFavorites } = useFavorites()
+
 
     console.log(recipe)
+
+  
 
     useEffect(() => {
         if (recipeId) {
@@ -48,10 +55,11 @@ const Recipe = () => {
                             </ul>
 
                         </div>
-                        
+                        {user && 
                         <div className="recipe-favorite--wrapper">
-                            <button type="submit">Add to Favs</button>
+                            <button onClick={() => addToFavorites({recipeId , name: recipe.name})}>Add to Favs</button>
                         </div>
+                        }
                 </div>}
             </div>
 

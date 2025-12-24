@@ -86,3 +86,17 @@ export interface CategoriesContextType {
 export interface CategoriesProviderProps {
   children: React.ReactNode
 }
+
+export interface Favorite{
+  recipeId: Recipe['id'] | undefined
+  name: Recipe['name'] | undefined
+}
+
+export interface FavoritesContextType {
+  favoritesList: Favorite[]
+  addToFavorites: (favorite: Favorite) => void,
+}
+
+export interface FavoritesProviderProps {
+  children: React.ReactNode
+}

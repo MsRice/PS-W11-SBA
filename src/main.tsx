@@ -8,6 +8,7 @@ import ModalProvider from './contexts/modal/ModalProvider.tsx'
 import AuthenticationProvider from './contexts/auth/AuthenticationProvider.tsx'
 import CategoriesProvider from './contexts/Categories/CategoriesProvider.tsx'
 import RecipeProvider from './contexts/Recipe/RecipeProvider.tsx'
+import FavoritesProvider from './contexts/Favorites/FavoritesProvider.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -16,9 +17,11 @@ createRoot(document.getElementById('root')!).render(
         <RecipeBookProvider>
           <CategoriesProvider>
             <RecipeProvider>
-              <Router>
-                <App />
-              </Router>
+              <FavoritesProvider>
+                <Router>
+                  <App />
+                </Router>
+              </FavoritesProvider>
             </RecipeProvider>
           </CategoriesProvider>
         </RecipeBookProvider>
