@@ -141,10 +141,33 @@ li{
     width: 90%;
     height: 90%;
     margin-top: 10px;
+    
+    
     overflow-y: scroll;
     scrollbar-width: thin; /* makes the scrollbar thinner */
     scrollbar-color: #333 transparent;
+    
+  }
+  
+.favorites__list--item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4px;
+  background-color: #F6F1E8;
+  border-radius: 2px;
+  margin: 6px 0 6px 6px;
+  position: relative;
+}
+.favorites__list--item:nth-child(odd){
+  background-color: #8FBFA3;
 
+}
+.favorite-delete--btn{
+
+  position: absolute;
+  right: 6px;
 }
 /* Nav Bar */
 .nav--wrapper{

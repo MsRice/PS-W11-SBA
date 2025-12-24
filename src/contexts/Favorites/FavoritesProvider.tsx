@@ -23,7 +23,17 @@ const FavoritesProvider = ({children}:FavoritesProviderProps) => {
 
     }, [storageKey, user]);
 
+    const removeFromFavorites = (favorite:Favorite) =>{
 
+        if(!storageKey) return
+        setFavoritesList(prev => {
+            console.log(prev)
+            const updated = prev.filter(f => f.recipeId !== favorite.recipeId)
+            
+            localStorage.setItem(storageKey , JSON.stringify(updated))
+            return updated   
+        })
+    }
 
 
     const addToFavorites = (favorite: Favorite) =>{
@@ -44,7 +54,7 @@ const FavoritesProvider = ({children}:FavoritesProviderProps) => {
     }
 
     return (
-        <FavoritesContext.Provider value={{favoritesList , addToFavorites}}>
+        <FavoritesContext.Provider value={{favoritesList , addToFavorites , removeFromFavorites}}>
             {children}
         </FavoritesContext.Provider>
     );

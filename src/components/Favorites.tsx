@@ -1,9 +1,10 @@
 import { useAuthentication } from '../contexts/auth/AuthenticationContect';
 import { useFavorites } from '../contexts/Favorites/FavoriesContext';
+import { FaRegTrashCan } from "react-icons/fa6";
 
 const Favorites = () => {
     const {user} = useAuthentication()
-    const { favoritesList } = useFavorites()
+    const { favoritesList , removeFromFavorites} = useFavorites()
 
     console.log(favoritesList)
     if(!user){
@@ -19,7 +20,7 @@ const Favorites = () => {
             <div className='favorites__title'>{user?.username} , Favorites!</div>
             <ul className='favorites__list--wrapper'>
                 {favoritesList.map(fav =>(
-                    <li>{fav.name}</li>
+                    <li className='favorites__list--item'>{fav.name} <button className='favorite-delete--btn' onClick={() => removeFromFavorites(fav)}><FaRegTrashCan /></button></li>
                 ))}
             </ul>
             

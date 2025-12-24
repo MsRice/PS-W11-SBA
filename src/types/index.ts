@@ -94,7 +94,8 @@ export interface Favorite{
 
 export interface FavoritesContextType {
   favoritesList: Favorite[]
-  addToFavorites: (favorite: Favorite) => void,
+  addToFavorites: (favorite: Favorite) => void
+  removeFromFavorites: (favorite: Favorite) => void
 }
 
 export interface FavoritesProviderProps {
