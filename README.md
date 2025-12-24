@@ -97,10 +97,14 @@ export default defineConfig([
 ])
 ```
 ## Reflection
-  --The most challenging part of the project for you.
-A brief explanation of a design decision you made (e.g., why you structured a hook a certain way, how you decided to manage a piece of state).
+  -- The most challenging part of the project for you.
+  -- A brief explanation of a design decision you made (e.g., why you structured a hook a certain way, how you decided to manage a piece of state).
 
---being intentional with commits!
+The most challenging part of this project was managing state across multiple concerns—routing, context, and persistence—while keeping the data flow predictable. Synchronizing URL parameters with Context state and localStorage required careful reasoning about where state should live and when it should change. Early iterations exposed issues like cascading renders, duplicated logic, and mismatched data shapes, which pushed me to slow down and be more deliberate in my architectural decisions rather than applying quick fixes.
+
+A key design decision I made was to centralize domain logic inside Context providers and keep routed components as thin as possible. Components use useParams only to extract identifiers, while providers handle fetching, normalization, and persistence. This separation reduced complexity, prevented redundant effects, and made the application easier to debug and extend. The same principle guided my favorites implementation: Context is the source of truth, while localStorage is treated strictly as a persistence layer, updated only during intentional state changes.
+
+Throughout the project, I was also intentional with my Git workflow. I made focused, descriptive commits that reflected a single logical change—such as refactoring context boundaries, fixing state synchronization, or normalizing API data—rather than bundling multiple concerns together. This made it easier to trace bugs, roll back changes, and reason about how the project evolved over time. Being disciplined with commits reinforced clearer thinking in my code and improved the overall maintainability of the project.
 
 ## Author
 
