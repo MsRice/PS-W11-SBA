@@ -3,6 +3,7 @@ import ricebook from '../assets/RiceBookLogos/ricebook.png'
 import { BiSolidUserDetail } from 'react-icons/bi';
 import { useModal } from '../contexts/modal/ModalContext';
 import type { SourceType } from '../types';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     const {openModal ,isOpen} = useModal()
@@ -18,7 +19,7 @@ const Nav = () => {
                 <img src={ricebook} alt="RiceBook Logo" />
             </figure>
             <ul className="nav--links">
-                <li className="nav--link">Home</li>
+                <li className="nav--link"><Link to=''>Home</Link></li>
                 <li className="nav--link" onClick={() => handleModalOpen('favorites')}>Favorites</li>
                 <li className="nav--link account" onClick={() => handleModalOpen('login')}><BiSolidUserDetail /></li>
             </ul>

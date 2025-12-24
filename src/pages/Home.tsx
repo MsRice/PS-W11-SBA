@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState} from "react";
 import { useCategories } from "../contexts/Categories/CategoriesContext";
 import { useRecipeBook } from "../contexts/RecipeBook/RecipeBookContext";
 import type { Recipe } from "../types";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     const {recipeBook , loading , category , setCategory}  = useRecipeBook()
@@ -65,7 +66,7 @@ const Home = () => {
                             </figure>
                             <h1>{featureRecipe.name}</h1>
                             <div className="feature-explore--wrapper">
-                                <button>explore</button>
+                                <Link to={`/recipe/${featureRecipe.id}`}>explore</Link>
                             </div>
                     </div>}
                 </div>

@@ -282,6 +282,69 @@ li{
     font-weight: 600;
 }
 
+
+/* Recipe Wall */
+.recipe-recipe--wrapper{
+  height: 98%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe-card--wrapper{
+  border: 4px solid #1F6B45;
+  display: flex;
+  width: 80%;
+  height: 80%;
+  
+  align-items: center;
+  border-radius: 10px;
+  justify-content: space-around;
+  background-color: #6ed1a08c;
+  position: relative;
+}
+.recipe-social--wrapper{
+  display: flex;
+  height: 94%;
+  width: 35%;
+  padding: 10px;
+  align-items: start;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.recipe-image--wrapper{
+  border-radius: 10px;
+  display: flex;
+  height: 30%;
+  margin-bottom: 10px;
+}
+.recipe-image--img{
+  border-radius: 10px;
+}
+
+.recipe-instruction--wrapper{
+  overflow-y: scroll;
+  transform: rotate(180deg);
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #0F3D2E #8FBFA3;
+}
+.recipe-social--list{
+  transform: rotate(180deg);
+
+}
+
+.recipe-favorite--wrapper{
+  position: absolute;
+  border: 2px solid #1F6B45;
+  padding: 4px;
+  border-radius: 4px;
+  bottom: 5%;
+  right: 5%;
+}
+
 /* Footer */
 
 .footer{

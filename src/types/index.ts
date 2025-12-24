@@ -25,8 +25,18 @@ export interface RecipeBookContextType {
     category : string
     setCategory : (category: string) => void
 }
+export interface RecipeContextType {
+    recipe: Recipe | undefined
+    loading : boolean
+    error : string | null
+    recipeId: Recipe['id'] | null
+    setRecipeId: (id: string) => void
+}
 
 export interface RecipeBookProviderProps {
+  children: React.ReactNode
+}
+export interface RecipeProviderProps {
   children: React.ReactNode
 }
 
